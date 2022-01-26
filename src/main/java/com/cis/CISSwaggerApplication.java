@@ -20,10 +20,6 @@ public class CISSwaggerApplication {
 
     @Bean
     public Docket swagger() {
-        return new Docket(SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-                .build();
+        return new Docket(SWAGGER_2).select().apis(RequestHandlerSelectors.any()).paths(PathSelectors.any()).build();
     }
 }

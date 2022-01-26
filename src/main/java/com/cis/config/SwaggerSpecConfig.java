@@ -1,15 +1,14 @@
 package com.cis.config;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import springfox.documentation.swagger.web.InMemorySwaggerResourcesProvider;
 import springfox.documentation.swagger.web.SwaggerResource;
 import springfox.documentation.swagger.web.SwaggerResourcesProvider;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 public class SwaggerSpecConfig {
@@ -20,7 +19,7 @@ public class SwaggerSpecConfig {
         return () -> {
             List<SwaggerResource> resources = new ArrayList<>();
             Arrays.asList("api1", "api2", "api3")
-                .forEach(resourceName -> resources.add(loadResource(resourceName)));
+                    .forEach(resourceName -> resources.add(loadResource(resourceName)));
             return resources;
         };
     }
